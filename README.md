@@ -1,6 +1,6 @@
 # Struts2, EJB, JPA (Hibernate), AJAX, Tiles, LDAP Example
 
-This repository is a simple example on how to create ejb (session bean including JPA as a replacement for EJB's entity bean), client web appliation using struts 2 and AJAX (get and post methods), and LDAP for login authentication.
+This repository is a simple example on how to create ejb (session bean including JPA as a replacement for EJB's entity bean), client web appliation using struts 2 with AJAX (get and post methods), and LDAP for login authentication.
 
 Requirements:
 
