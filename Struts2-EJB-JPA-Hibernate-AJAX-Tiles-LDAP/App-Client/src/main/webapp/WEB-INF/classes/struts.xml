@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<!-- Author: tks0268 -->
+
+<!-- Using XML -->
+<struts>
+    <constant name="struts.devMode" value="true"/>
+    <constant name="struts.custom.i18n.resources" value="resource.application" />
+    <constant name="struts.multipart.maxSize" value="1000000" />
+    <package name="default" extends="struts-default, json-default" namespace="/">
+        <result-types>
+            <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult"/>
+        </result-types>
+       
+        <action name="login">
+            <result name="success" type="tiles">login</result>
+        </action>
+        
+        <action name="auth" class="id.co.struts2.app.action.LoginLDAP" method="execute">
+            <result name="success" type="tiles">home</result>
+            <result name="error" type="redirect">login</result>
+        </action>
+        
+        <action name="logout" class="id.co.struts2.app.action.LoginAction" method="logout">
+            <result name="success" type="tiles">login</result>
+        </action>
+        
+        <action name="employees" class="id.co.struts2.app.action.EmployeeAction" method="showEmployees">
+            <result name="showEmployees" type="tiles">employees</result>
+        </action>
+        
+        <action name="manageEmployee" class="id.co.struts2.app.action.EmployeeAction" method="execute">
+            <result name="success" type="tiles">manageEmployee</result>
+        </action>        
+        
+        <action name="addEmployee" class="id.co.struts2.app.action.EmployeeAction" method="addEmployee">
+            <result name="addEmployee" type="json"></result>
+        </action>
+        
+        <action name="updateEmployee" class="id.co.struts2.app.action.EmployeeAction" method="updateEmployee">
+            <result name="updateEmployee" type="json"></result>
+        </action>
+        
+        <action name="getEmployeeById" class="id.co.struts2.app.action.EmployeeAction" method="getEmployeeById">
+            <result name="getEmployeeById" type="json"></result>
+            <result name="getEmployeeById" type="tiles">manageEmployee</result>
+        </action>        
+        
+        <action name="deleteEmployee" class="id.co.struts2.app.action.EmployeeAction" method="deleteEmployee">
+            <result name="deleteEmployee" type="json"></result>
+            <result name="deleteEmployee" type="tiles">manageEmployee</result>
+        </action>        
+    </package>    
+</struts>  
+    

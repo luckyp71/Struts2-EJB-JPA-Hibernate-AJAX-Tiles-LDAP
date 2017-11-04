@@ -1,0 +1,32 @@
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <definition name="template" template="/WEB-INF/pages/template.jsp">
+        <put-attribute name="title" value="Struts 2"/>  
+        <put-attribute name="header" value="/WEB-INF/pages/header/header.jsp"/>
+        <put-attribute name="content" value=""/>  
+        <put-attribute name="sidebar" value="/WEB-INF/pages/sidebar/sidebar.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/pages/footer/footer.jsp"/>
+    </definition>        
+    
+    <!-- Login Page -->
+    <definition name="login" template="/WEB-INF/pages/login.jsp">
+    </definition>
+    <!-- Login Page -->
+              
+    <!-- Home Page -->    
+    <definition name="home" extends="template">
+        <put-attribute name="content" value="/WEB-INF/pages/content/welcome.jsp"/>
+    </definition>
+    <!-- Home Page -->
+  
+    <definition name="employees" template="/WEB-INF/pages/content/employees.jsp">
+    </definition> 
+
+    <definition name="manageEmployee" template="/WEB-INF/pages/content/manageEmployee.jsp">
+    </definition> 
+
+  
+      
+</tiles-definitions>
