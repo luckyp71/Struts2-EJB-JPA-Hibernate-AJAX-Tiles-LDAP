@@ -2,7 +2,7 @@
 
 This repository is a simple example on how to create ejb (session bean including JPA as a replacement for EJB's entity bean), client web appliation using struts 2 with AJAX (get and post methods), and LDAP for login authentication.
 
-Requirements:
+Prerequisites:
 
 1. Netbeans 8.1
 2. Apache Directory Studio 2.0.0. (Create new entry, add inetOrgPerson object class, and add displayName attribute for each user in users organizational unit)
